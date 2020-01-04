@@ -61,7 +61,7 @@ export default {
   // 用于存放网页中需要调用的方法
   methods:{
     loadData(){
-      let url ="http://localhost:6677/address/findAll"
+      let url ="http://134.175.154.93:6677/address/findAll"
       request.get(url).then((response)=>{
         // 将查询结果设置到address中，this指向外部函数的this
         this.addresss = response.data;
@@ -96,7 +96,7 @@ export default {
     },
     toDeleteHandler(id){
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
-        confirmButtonText: '确定',
+        confirmButto1nText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {

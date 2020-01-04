@@ -81,18 +81,18 @@ import querystring from 'querystring'
 export default {
     methods:{
         submitHandler(){
-            let url = "http://localhost:6677//product/saveOrUpdate"
+            let url = "http://localhost:6677/product/save"
             request({
                 url,
                 method:"POST",
                 headers:{
                     "Conten-Type":"application/x-form-urlencoded"
                 },
-                data:querystring.stringfy(this.form)
+                data:querystring.stringfy(this.form)  
             })
         },
         loadData(){
-            let url = "http://localhost:6677/product/findAll";
+            let url = "http://134.175.154.93:6677/product/findAll";
             request.get(url).then((response)=>{
                 this.products = response.data;
             }).then((response)=>{
