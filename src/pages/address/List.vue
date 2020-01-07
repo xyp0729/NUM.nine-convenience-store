@@ -73,7 +73,7 @@ export default {
       // request.post(url,this.form)
       // 查询字符串 type=customer&age=12
       // 通过request与后台进行交互，并且要携带参数
-      let url = "http://localhost:6677/address/saveOrUpdate";
+      let url = "http://134.175.154.93:6677/address/saveOrUpdate";
       request({
         url,
         method:"POST",
@@ -101,7 +101,7 @@ export default {
         type: 'warning'
       }).then(() => {
 
-        let url ="http://localhost:6677/address/deleteById?id="+id;
+        let url ="http://134.175.154.93:6677/address/deleteById?id="+id;
         request.get(url).then((response)=>{
           this.loadData();
           this.$message({

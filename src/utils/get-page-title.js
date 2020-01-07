@@ -1,6 +1,6 @@
 import defaultSettings from '@/settings'
 
-const title = defaultSettings.title || '网吧管理系统服务'
+const title = defaultSettings.title || '网吧服务管理云平台'
 
 export default function getPageTitle(pageTitle) {
   if (pageTitle) {

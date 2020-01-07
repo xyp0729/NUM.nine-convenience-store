@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '网吧管理系统服务',
+  title: '网吧服务管理云平台',
 
   /**
    * @type {boolean} true | false

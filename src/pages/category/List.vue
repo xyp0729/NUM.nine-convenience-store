@@ -60,7 +60,7 @@ export default {
       })
     },
     submitHandler(){
-      let url = "http://localhost:6677/category/saveOrUpdate";
+      let url = "http://134.175.154.93:6677/category/saveOrUpdate";
       request({
         url,
         method:"POST",

@@ -7,7 +7,7 @@
     <!-- 表格 -->
     <el-table :data="orders.list">
       <el-table-column prop="id" label="编号"></el-table-column>
-      <el-table-column  prop="orderTime" label="下单时间"></el-table-column>
+      <el-table-column width="200" prop="orderTime" label="下单时间"></el-table-column>
       <el-table-column prop="total" label="总价"></el-table-column>
       <el-table-column prop="status" label="状态"></el-table-column>
       <el-table-column prop="customerId" label="顾客ID"></el-table-column>
@@ -72,7 +72,7 @@ export default {
         this.loadData();
     },
     loadData(){
-      let url = "http://134.175.154.93:6677/order/queryPage"
+      let url = "http://localhost:6677/order/queryPage"
       request({
           url,
           method:"post",
@@ -91,7 +91,7 @@ export default {
       // request.post(url,this.form)
       // 查询字符串 type=order&age=12
       // 通过request与后台进行交互，并且要携带参数
-      let url = "http://134.175.154.93:6677/order/saveOrUpdate";
+      let url = "http://localhost:6677/order/saveOrUpdate";
       request({
         url,
         method:"POST",
@@ -118,7 +118,7 @@ export default {
         type: 'warning'
       }).then(() => {
         // 调用后台接口，完成删除操作
-        let url = "http://134.175.154.93:6677/order/deleteById?id="+id;
+        let url = "http://localhost:6677/order/deleteById?id="+id;
         request.get(url).then((response)=>{
           //1. 刷新数据
           this.loadData();
