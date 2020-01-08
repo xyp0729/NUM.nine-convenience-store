@@ -53,14 +53,14 @@ export default {
   // 用于存放网页中需要调用的方法
   methods:{
     loadData(){
-      let url = "http://134.175.154.93:6677/category/findAll"
+      let url = "http://localhost:6677/category/findAll"
       request.get(url).then((response)=>{
         // 将查询结果设置到categorys中，this指向外部函数的this
         this.categorys = response.data;
       })
     },
     submitHandler(){
-      let url = "http://134.175.154.93:6677/category/saveOrUpdate";
+      let url = "http://localhost:6677/category/saveOrUpdate";
       request({
         url,
         method:"POST",

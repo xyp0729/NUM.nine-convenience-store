@@ -71,7 +71,7 @@ import querystring from 'querystring'
 export default {
     methods:{
         submitHandler(){
-            let url = " http://134.175.154.93:6677/waiter/findAll"
+            let url = " http://localhost:6677/waiter/findAll"
             request({        
                 url,
                 method:"POST",
@@ -82,7 +82,7 @@ export default {
             })
         },
         loadData(){
-            let url = "http://134.175.154.93:6677/waiter/findAll";
+            let url = "http://localhost:6677/waiter/findAll";
             request.get(url).then((response)=>{
                 this.employees = response.data;
             }).then((response)=>{

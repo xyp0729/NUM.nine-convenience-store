@@ -72,7 +72,7 @@
                 <el-form-item label="上传图片">
                     <el-upload
                             class="upload-demo"
-                            action="http://134.175.154.93:6677/file/upload"
+                            action="http://localhost:6677/file/upload"
                             multiple
                             :limit="3"
                             
@@ -98,21 +98,21 @@ import querystring from 'querystring'
 export default {
     methods:{
         loadData(){
-            let url="http://134.175.154.93:6677/product/findAll"
+            let url="http://localhost:6677/product/findAll"
         request.get(url).then((response)=>{
             //this指向外部函数的this
             this.product=response.data;
         })
         },
          loadData2(){
-            let url="http://134.175.154.93:6677/category/findAll"
+            let url="http://localhost:6677/category/findAll"
         request.get(url).then((response)=>{
             //this指向外部函数的this
             this.options=response.data;
         })
         },
          toAddHandler(){
-            let url = "http://134.175.154.93:6677/category/findAll"
+            let url = "http://localhost:6677/category/findAll"
             request.get(url).then((response)=>{
                 this.options = response.data;
             })
@@ -128,7 +128,7 @@ export default {
             this.visible=false;
         },
           toUpdateHandler(row){
-            let url = "http://134.175.154.93:6677/category/findAll"
+            let url = "http://localhost:6677/category/findAll"
             request.get(url).then((response)=>{
                 this.options = response.data;
             })
@@ -138,13 +138,13 @@ export default {
             this.visible=true;
         },
         upLoadSucessHandler(response){
-            let photo="http://134.175.154.93:8888/group1/"+response.data.id
+            let photo="http://localhost:8888/group1/"+response.data.id
             this.form.photo=photo;
             console.log(response);
         },
         submitHandler(){
                 //与后台进行交互
-                let url="http://134.175.154.93:6677/product/saveOrUpdate";
+                let url="http://localhost:6677/product/saveOrUpdate";
                 // request.post(url,this.form)
                 request({
                     //小括号方法调用
@@ -174,7 +174,7 @@ export default {
           type: 'warning'
         }).then(() => {
           //调用后台接口，实现删除
-            let url="http://134.175.154.93:6677/product/deleteById?id="+id;
+            let url="http://localhost:6677/product/deleteById?id="+id;
             request.get(url).then((response)=>{
                 //刷新页面
                 this.loadData();
