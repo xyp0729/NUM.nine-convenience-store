@@ -3,8 +3,9 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">九号便利云平台</h3>
       </div>
+
 
       <el-form-item prop="username">
         <span class="svg-container">
