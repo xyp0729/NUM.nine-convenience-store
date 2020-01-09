@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '网吧服务管理云平台',
+  title: '九号便利云平台',
 
   /**
    * @type {boolean} true | false
@@ -12,5 +12,5 @@ module.exports = {
    * @type {boolean} true | false
    * @description Whether show the logo in sidebar
    */
-  sidebarLogo: false
+  sidebarLogo: true 
 }
