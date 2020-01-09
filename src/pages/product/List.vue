@@ -16,6 +16,8 @@
         <template v-slot="slot">
           <a href="" @click.prevent="toDeleteHandler(slot.row.id)">删除</a>
           <a href="" @click.prevent="toUpdateHandler(slot.row)">修改</a>
+          <a href="" @click.prevent="toDtailHandler(slot.row.description)">详情</a>
+          <el-button type="text"  @click="toDtailHandler">详情</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -78,6 +80,11 @@ import querystring from 'querystring'
 export default {
   // 用于存放网页中需要调用的方法
   methods:{
+    toDtailHandler(){
+      this.fileList = [];
+      this.form = form.description;
+      this.visible = true;
+    },
     // 上传成功的事件处理函数
     uploadSuccessHandler(response){
       let photo = "http://134.175.154.93:8888/group1/"+response.data.id
@@ -149,9 +156,15 @@ export default {
     },
     toUpdateHandler(row){
       // 模态框表单中显示出当前行的信息
-      this.fileList = [];
-      this.form = row;
-      this.visible = true;
+      this.$alert('这是一段内容', 'form.id', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
     },
     closeModalHandler(){
       this.visible = false;
